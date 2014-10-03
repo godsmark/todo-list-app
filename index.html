@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- need for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Do List App</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+  </head>
+  <body>
+    
+    <div class="header-content">
+      <div class="inside-content clearfix">
+        <div class="title">
+          <h1>To Do List</h1>
+        </div>
+        <form id="list-form">
+          <input type="text" name="addItem" class="addItem">
+          <input type="submit" class="add-btn" value="&#43;">
+        </form>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="default">
+        You currently have no tasks.
+      </div>
+      <div class="footer">
+        <a class="remove-all">Delete all</a>
+      </div>
+    </div> 
+    
+    
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/moment.js"></script> 
+    
+    <script>
+    $(document).ready(function (){
+      
+      // add a task
+      $(document).on('submit', '#list-form', function (e){
+          e.preventDefault();
+          var toAdd = $('.addItem').val();
+          
+          // get date and format with moment.js
+          var date = moment().format("MMM D");
+
+          $('.default').remove();
+
+          $('.footer').prepend('<div class="todo"><div class="inside-content clearfix"><div class="date">' + date + '</div><div class="list-item">' + toAdd + '</div><div id="item-action"><button class="btn-complete">&#10004;</button><button class="btn-remove">&#10008;</button></div></div></div>');
+      });
+
+      //delete all tasks
+      $(document).on('click','.remove-all', function(){
+         location.reload();
+      });
+      
+      // delete a task
+      $(document).on('click','.btn-remove', function(){
+         $(this).parents('.inside-content').remove(); 
+      });
+
+      //completed task
+      $(document).on('click','.btn-complete', function() {
+        $(this).parents('.inside-content').fadeOut('5000');
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+
+<!-- <li class="todo">
+
+  <div class="inside-content clearfix">
+    <div class="date">'+ date +'</div>
+    <div class="list-item">' + toAdd + '</div>
+    <div id="item-action">
+      <button class="btn-complete">Complete</button>
+      <button class="btn-remove">Remove</button>
+    </div>
+  </div>
+
+</li> -->
+
+
+
+
+

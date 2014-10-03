@@ -1,0 +1,61 @@
+body {
+	font-family: 'sans-serif';
+	box-sizing: border-box;
+	font-size: 62.5%; /* 10px default */
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	line-height: 150%;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+	width: 100%;
+	background-color: #32409A;
+}
+
+.inside-header {
+	max-width: 1100px; 
+	margin: 0 auto;
+}
+
+.title {
+	font-size: 3em;
+	color: white;
+	float: left;
+}
+
+#list-form {
+	float: left;
+
+	button {
+		background-color: #FCB03C;
+	}
+}
+
+.list-input {
+	width: 700px;
+}
+
+
+/* ===== MAIN ===== */
+
+main {
+	background-color: red;
+}
+

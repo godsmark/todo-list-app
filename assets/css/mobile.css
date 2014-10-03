@@ -1,0 +1,34 @@
+/* Media queries go here */
+
+/* screens up to 800px */
+@media only screen and (max-width: 800px) {
+	#list-form, .addItem {
+		width: 70%;
+	}
+
+	.title {
+		font-size: 1.8em;
+		padding: 1em 0em;
+		width: 30%;
+	}
+
+	.btn-complete, 
+	.btn-remove {
+		margin: 2.2em 0.5em;
+		padding: 1em;
+		font-size: 1.4em;
+	}
+
+	.date, .list-item {
+		padding: 2.1em 0em;
+		font-size: 1.4em;
+	}
+
+	.add-btn {
+		padding: 0.3em;
+	}
+
+	.list-item {
+		word-wrap: break-word;
+	}
+}
